@@ -681,7 +681,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
      
     elif query.data.startswith("send_all"):
         ident, key = query.data.split("#")
-        user = query.message.reply_to_message.from_user.id
+        user = query.message.reply_to_message.id
         if int(user) != 0 and query.from_user.id != int(user):
             return await query.answer(f"Hello {query.from_user.first_name},\nDon't Click Other Results!", show_alert=True)
         
